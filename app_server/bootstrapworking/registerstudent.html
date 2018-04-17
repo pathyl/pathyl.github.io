@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation           </span><span class="icon-bar">             </span><span class="icon-bar">       </span><span class="icon-bar">        </span></button><a href="#" class="navbar-brand">Willowbrook Private School      </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="../">Home              </a></li>
+                <li><a href="../registerstudent">Register Student</a></li>
+                <li><a href="../findstudent">Find Student             </a></li>
+                <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">Student<span class="caret">               </span></a>
+                  <ul class="dropdown-menu">
+                    <li class="active"><a href="../registerstudent">Register New Student</a></li>
+                    <li><a href="../findstudent">Lookup Student</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- End of first row-->
+      <div class="row">
+        <div class="col-md-3"></div>
+        <!-- end of md3 column-->
+        <div class="col-md-6">
+          <div class="well"> 
+                    <div class="form-group">
+                    <form action="/api/student" method="POST">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                    <label class="control-label" for="studentfirstname">Student First Name:</label>
+                                    <input class="form-control" id="studentfirstname" type="text" name="studentfirstname" required=""/><br/>
+                                    <label class="control-label" for="studentlastname">Student Last Name:</label>
+                                    <input class="form-control"  id="studentlastname" type="text" name="studentlastname" required=""/><br/>
+                                    <label class="control-label" for="dateofbirth">Date of birth:</label>
+                                    <input class="form-control"  id="dateofbirth" type="date" required=""/><br/>
+                                   
+                                    <label class="control-label" for="phone">Phone:</label>
+                                    <input class="form-control"  id="phone" type="text" name="phone" required=""/><br/>
+                                    <label class="control-label" for="altphone">Alternate Phone:</label>
+                                    <input class="form-control"  id="altphone" type="text" name="altphone" required=""/><br/>
+                                    <label class="control-label" for="aftercare">Aftercare (Yes/No):</label>
+                                    <input class="form-control"  id="aftercare" type="checkbox" name="aftercare" required=""/><br/>
+                                    <label class="control-label" for="academicprogram">Academic Program:</label>
+                                    <select class="form-control"  id="academicprogram" name="academicprogram" required="">
+                                      <option value="prek">Pre-K</option><br/>
+                                      <option value="kindergarten">Kindergarten</option><br/>
+                                      <option value="first">First</option><br/>
+                                      <option value="second">Second</option><br/>
+                                      <option value="third">Third</option><br/>
+                                      <option value="fourth">Fourth</option><br/>
+                                      <option value="fifth">Fifth</option><br/>
+                                      <option value="sixth">Sixth</option><br/>
+                                      <option value="aftercareonly">Aftercare Only</option><br/>
+                                    </select><br/>
+
+                            </div>
+                            <div class="col-md-6">
+                                    <label class="control-label" for="parentfirstname">Parent First Name:</label>
+                                    <input class="form-control"  id="parentfirstname" type="text" name="parentfirstname" required=""/><br/>
+                                    <label class="control-label" for="parentlastname">Parent Last Name:</label>
+                                    <input class="form-control"  id="parentlastname" type="text" name="parentlastname" required=""/><br/>
+                                    <label class="control-label" for="streetaddress">Street Address:</label>
+                                    <input class="form-control"  id="streetaddress" type="text" name="streetaddress" required=""/><br/>
+                                    <label class="control-label" for="city">City:</label>
+                                    <input class="form-control"  id="city" type="text" name="city" required=""/><br/>
+                                    <label class="control-label" for="state">State:</label>
+                                    <select class="form-control"  id="state" required="">
+                                      <option value="TX">Texas</option>
+                                    </select><br/>
+                                    <label class="control-label" for="zip">Zip Code:</label>
+                                    <input class="form-control"  id="zip" type="text" name="zipcode" required=""/><br/>
+                                    <label class="control-label" for="billingcycle">Billing Cycle:</label>
+                                    <select class="form-control"  id="billingcycle" name="billingcycle" required="">
+                                      <option value="monthly">Monthly</option><br/>
+                                      <option value="weekly">Weekly</option><br/>
+                                    </select><br/><br/>
+                            </div>
+                        </div>
+                        
+                       
+                        <input class="form-control btn btn-primary"  id="submit" type="submit" value="Register New Student"/>
+                        <input class="form-control btn btn-danger"  id="reset" type="reset" value="Reset Form"/>
+                      </form>
+                      </div>
+                      
+              </div>
+          </div>
+          <!-- end of middle well-->
+        </div>
+        <!-- end of md6 column-->
+        <div class="col-md-3"></div>
+        <!-- end of md3 column-->
+      </div>
+      <!-- End of row-->
+    </div>
+    <!-- end of full body container-->
+  </body>
+</html>

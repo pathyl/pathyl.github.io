@@ -1,0 +1,82 @@
+extends layout
+
+block content
+  h1.text-center= title
+  br
+  div
+  .form-group
+  form(action='/api/student', method='POST')
+    .form-row
+      .col-md-6
+        label.control-label(for='studentfirstname') Student First Name:
+        input#studentfirstname.form-control(type='text', name='studentfirstname', required='')
+        br
+        label.control-label(for='studentlastname') Student Last Name:
+        input#studentlastname.form-control(type='text', name='studentlastname', required='')
+        br
+        label.control-label(for='dateofbirth') Date of birth:
+        input#dateofbirth.form-control(type='date', required='')
+        br
+        label.control-label(for='phone') Phone:
+        input#phone.form-control(type='text', name='phone', required='')
+        br
+        label.control-label(for='altphone') Alternate Phone:
+        input#altphone.form-control(type='text', name='altphone', required='')
+        br
+        label.control-label(for='aftercare') Aftercare (Yes/No):
+        input#aftercare.form-control(type='checkbox', name='aftercare', required='')
+        br
+        label.control-label(for='academicprogram') Academic Program:
+        select#academicprogram.form-control(name='academicprogram', required='')
+          option(value='prek') Pre-K
+          br
+          option(value='kindergarten') Kindergarten
+          br
+          option(value='first') First
+          br
+          option(value='second') Second
+          br
+          option(value='third') Third
+          br
+          option(value='fourth') Fourth
+          br
+          option(value='fifth') Fifth
+          br
+          option(value='sixth') Sixth
+          br
+          option(value='aftercareonly') Aftercare Only
+          br
+        br
+      .col-md-6
+        label.control-label(for='parentfirstname') Parent First Name:
+        input#parentfirstname.form-control(type='text', name='parentfirstname', required='')
+        br
+        label.control-label(for='parentlastname') Parent Last Name:
+        input#parentlastname.form-control(type='text', name='parentlastname', required='')
+        br
+        label.control-label(for='streetaddress') Street Address:
+        input#streetaddress.form-control(type='text', name='streetaddress', required='')
+        br
+        label.control-label(for='city') City:
+        input#city.form-control(type='text', name='city', required='')
+        br
+        label.control-label(for='state') State:
+        select#state.form-control(required='')
+          option(value='TX') Texas
+        br
+        label.control-label(for='zip') Zip Code:
+        input#zip.form-control(type='text', name='zipcode', required='')
+        br
+        label.control-label(for='billingcycle') Billing Cycle:
+        select#billingcycle.form-control(name='billingcycle', required='')
+          option(value='monthly') Monthly
+          br
+          option(value='weekly') Weekly
+          br
+        br
+        br
+    input#submit.form-control.btn.btn-primary(type='submit', value='Register New Student')
+    input#reset.form-control.btn.btn-danger(type='reset', value='Reset Form')
+
+
+
