@@ -54,4 +54,4 @@ process.on('SIGTERM', function(){
 	});
 });
 
-require('./student');
+require('./household');

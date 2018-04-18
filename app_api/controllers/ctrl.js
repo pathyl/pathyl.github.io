@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var Student = mongoose.model('Student');
+var Household = mongoose.model('Household');
+//var Login = mongoose.model('Login');
 
 
 var sendJsonResponse = function(res, status, content){
@@ -7,36 +8,45 @@ var sendJsonResponse = function(res, status, content){
 	res.json(content);
 }
 
-module.exports.studentCreate = function(req, res){
+module.exports.householdCreate = function(req, res){
 	//sendJsonResponse(res, 200, {"status" : "success", "student" : "created"});
 	//console.log(req.body);
-	var student = new Student({
-		studentFirstName: req.body.studentfirstname,
-		studentLastName: req.body.studentlastname,
-		aftercare: req.body.aftercare,
-		programID: req.body.programid,
-		householdID: req.body.householdid,
-		studentID: req.body.studentid,
-		notes: req.body.notes,
-		dateOfBirth: req.body.dateofbirth,
+	var household = new Household({
 		parentFirstName: req.body.parentfirstname,
-		parentLastName: req.body.parentlast,
+		parentLastName: req.body.parentlastname,
+		householdID: req.body.householdid,
 		streetAddress: req.body.streetaddress,
 		city: req.body.city,
 		state: req.body.state,
 		zip: req.body.zip,
 		phone: req.body.phone,
 		altphone: req.body.altphone,
-		billingCycle: req.body.billingcycle
-	}, function(err, location){
+		billingCycle: req.body.billingCycle,
+		student:{
+			studentFirstName: req.body.studentfirstname,
+			studentLastName: req.body.studentlastname,
+			aftercare:  req.body.aftercare,
+			programID:  req.body.programid,
+			studentID:  req.body.studentid,
+			notes:  req.body.notes,
+			dateOfBirth:  req.body.dateofbirth,
+			absences:{
+				
+			}
+		},
+		bill:{
+
+		}
+
+
+	},function(err, location){
 		if (err){
 			sendJsonResponse(res, 400, err);
 		}else {
 			sendJsonResponse(res, 201, "it : success");
 		}
 	});
-	//console.log(student);
-	student.save().then(result => {
+	household.save().then(result => {
 		console.log(result);
 	}).catch(err => console.log(err));
 };
