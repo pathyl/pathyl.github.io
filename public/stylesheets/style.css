@@ -1,0 +1,23 @@
+body{
+    background-color:#05324b;
+}
+.card{
+    margin-top:1.5rem;
+}
+.card-body{
+    background-color: #e6e6e6;
+    color: black;
+}
+.navbar-nav{
+    font-weight:bold;
+    font-size:1.1rem;
+}
+.navbar-brand{
+    font-weight:bold;
+    font-size:1.3rem;
+}
+.card-header{
+    background-color: #414141;
+    color: #ececec !important;
+    font-weight:bold;
+}

@@ -1,61 +1,31 @@
 html
   head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4', crossorigin='anonymous')
+    link(rel='stylesheet', href="/stylesheets/style.css")
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm', crossorigin='anonymous')
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js')
     title Home
   body
     .container-fluid
+        nav.nav.navbar-light.bg-light.navbar-expand-sm.py-md-3.navbar-fixed-top.justify-content-center
+          a.navbar-brand Willowbrook Information System
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='#') Home
+            li.nav-item
+              a.nav-link(href='#') View Student
+            li.nav-item
+              a.nav-link(href='#') View Household
       .row
-        nav.navbar.navbar-default.navbar-static-top
-          .container
-            .navbar-header
-              button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-                span.sr-only Toggle navigation           
-                span.icon-bar              
-                span.icon-bar        
-                span.icon-bar         
-              a.navbar-brand(href='#') Willowbrook Private School      
-            #navbar.navbar-collapse.collapse
-              ul.nav.navbar-nav
-                li
-                  a(href='../') Home              
-                li
-                  a(href='../registerstudent') Register Student
-                li.dropdown
-                  a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-                    | Student
-                    span.caret                
-                  ul.dropdown-menu
-                    li
-                      a(href='../registerstudent') Register New Student
-                    li
-                      a(href='../findstudent') Lookup Student
-                li
-                  a(href='../billing') Billing
-                li
-                  a(href='../aftercare') Aftercare
-                li
-                  a(href='../logout') Logout
-                li
-                  form.navbar-form.navbar-right(role='search')
-                    .input-group
-                      input.form-control(type='text', placeholder='Student Lookup')
-                      span.input-group-btn
-                        button.btn.btn-default(type='submit')
-                          span.glyphicon.glyphicon-search
-      // End of first row
-      .row
-        .col-md-3
+        .col-md-2
         // end of md3 column
-        .col-md-6
-          .well
+        .col-md-8
             block content
           // end of middle well
         // end of md6 column
-        .col-md-3
+        .col-md-2
         // end of md3 column
       // End of row
     // end of full body container
